@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Movie = require('../models/Movie');
 
-// Create a new movie
 router.post('/', async (req, res) => {
     const movie = new Movie(req.body);
     try {
