@@ -13,7 +13,6 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Read all movies
 router.get('/', async (req, res) => {
     try {
         const movies = await Movie.find();
@@ -23,7 +22,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Read a specific movie
 router.get('/:movieId', async (req, res) => {
     try {
         const movie = await Movie.findById(req.params.movieId);
@@ -33,7 +31,6 @@ router.get('/:movieId', async (req, res) => {
     }
 });
 
-// Update a movie
 router.patch('/:movieId', async (req, res) => {
     try {
         const updatedMovie = await Movie.updateOne(
@@ -46,7 +43,6 @@ router.patch('/:movieId', async (req, res) => {
     }
 });
 
-// Delete a movie
 router.delete('/:movieId', async (req, res) => {
     try {
         const removedMovie = await Movie.deleteOne({ _id: req.params.movieId });
